@@ -4,47 +4,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark" />
-  <meta name="theme-color" content="#070b08" />
+  <meta name="theme-color" content="#030604" />
 
-  <title>Junk Mailer — Newsletter Signup Flow Tester</title>
-  <meta name="description" content="Junk Mailer is a professional, friendly tool for testing newsletter signups and email flows—simple, approachable, and easy to use." />
+  <title>JUNK MAILER - Instant Newsletters!</title>
+  <meta name="description" content="Junk Mailer — Instantly sign up to 5–15 random newsletters. Simple, fast, and fun testing tool." />
 
-  <!-- Favicon placeholder (replace with your real asset) -->
-  <link rel="icon" href="https://example.com/icons/junk-mailer-green.png" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-  <!-- Open Graph / social sharing -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Junk Mailer — Newsletter Signup Flow Tester" />
-  <meta property="og:description" content="A professional, friendly tool for testing newsletter signups and email flows—simple, approachable, and easy to use." />
-  <!-- <meta property="og:url" content="https://example.com" /> -->
-  <!-- <meta property="og:image" content="https://example.com/og-image.png" /> -->
-
-  <!-- Twitter cards -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Junk Mailer — Newsletter Signup Flow Tester" />
-  <meta name="twitter:description" content="A professional, friendly tool for testing newsletter signups and email flows—simple, approachable, and easy to use." />
-  <!-- <meta name="twitter:image" content="https://example.com/og-image.png" /> -->
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Background + surfaces */
-      --bg0:#050707;
-      --bg1:#090f0c;
+      --bg0:#020303;
+      --bg1:#050906;
 
-      --card: rgba(10, 16, 12, .62);
-      --card2: rgba(10, 16, 12, .90);
+      --card: rgba(8, 14, 10, .62);
+      --card2: rgba(8, 14, 10, .92);
 
-      /* Neon-green, high-tech accent */
-      --accent:#39ff88;   /* neon edge */
-      --accent2:#12d96a;  /* deeper neon */
-      --accent3:#0aa84f;  /* darker green */
+      --accent:#39ff88;
+      --accent2:#12d96a;
+      --accent3:#0aa84f;
 
       --text: rgba(245,255,249,.94);
       --muted: rgba(235,255,245,.74);
@@ -52,13 +31,12 @@
 
       --danger:#ef4444;
 
-      /* Border + glow tuned more “sci-fi” */
-      --border: rgba(57,255,136,.18);
-      --border2: rgba(57,255,136,.28);
-      --ring: 0 0 0 3px rgba(57,255,136,.23);
+      --border: rgba(57,255,136,.22);
+      --border2: rgba(57,255,136,.38);
+      --ring: 0 0 0 3px rgba(57,255,136,.26);
 
-      --shadow: 0 32px 100px rgba(0,0,0,.72);
-      --glow: 0 0 0 1px rgba(57,255,136,.20), 0 0 28px rgba(57,255,136,.12);
+      --shadow: 0 34px 110px rgba(0,0,0,.78);
+      --glow: 0 0 0 1px rgba(57,255,136,.24), 0 0 44px rgba(57,255,136,.16);
 
       --radius: 18px;
       --radius2: 14px;
@@ -70,16 +48,16 @@
 
     *{ box-sizing:border-box; }
     html,body{ height:100%; }
+
     body{
       margin:0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color: var(--text);
-
-      /* High-tech background: neon arcs + subtle scanlines */
       background:
-        radial-gradient(820px 520px at 18% 0%, rgba(57,255,136,.22), transparent 60%),
-        radial-gradient(820px 520px at 86% 14%, rgba(57,255,136,.14), transparent 62%),
-        radial-gradient(700px 520px at 50% 110%, rgba(255,255,255,.06), transparent 58%),
+        radial-gradient(900px 560px at 18% 0%, rgba(57,255,136,.32), transparent 62%),
+        radial-gradient(860px 520px at 86% 14%, rgba(57,255,136,.20), transparent 64%),
+        radial-gradient(820px 540px at 52% 112%, rgba(255,255,255,.06), transparent 62%),
+        radial-gradient(1200px 800px at 50% 40%, rgba(57,255,136,.08), transparent 70%),
         linear-gradient(180deg, var(--bg0), var(--bg1));
       position: relative;
       -webkit-font-smoothing: antialiased;
@@ -88,35 +66,66 @@
       overflow-x: hidden;
     }
 
-    /* Scanline / tech overlay (very subtle) */
+    /* Stronger scanlines + subtle vignette + faint “CRT shimmer” */
     body::before{
       content:"";
       position: fixed;
       inset: 0;
       pointer-events: none;
       background:
+        radial-gradient(1200px 700px at 50% 30%, rgba(0,0,0,0), rgba(0,0,0,.46)),
         repeating-linear-gradient(
           180deg,
-          rgba(57,255,136,.035) 0px,
-          rgba(57,255,136,.035) 1px,
+          rgba(57,255,136,.055) 0px,
+          rgba(57,255,136,.055) 1px,
           transparent 1px,
-          transparent 6px
-        );
-      opacity: .25;
+          transparent 7px
+        ),
+        linear-gradient(180deg, rgba(255,255,255,.03), transparent 14%, transparent 86%, rgba(255,255,255,.02));
+      opacity: .24;
       mix-blend-mode: screen;
+      z-index: 0;
     }
 
-    /* Accessible skip link */
+    /* Matrix layer */
+    .matrix{
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .18;
+      mask-image: radial-gradient(60% 52% at 50% 35%, black 42%, transparent 80%);
+      -webkit-mask-image: radial-gradient(60% 52% at 50% 35%, black 42%, transparent 80%);
+      filter: blur(.2px);
+    }
+    .matrix pre{
+      margin:0;
+      position:absolute;
+      inset:-20% -10%;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      line-height: 1.35;
+      color: rgba(57,255,136,.74);
+      text-shadow: 0 0 16px rgba(57,255,136,.18);
+      white-space: pre;
+      transform: translateZ(0);
+      animation: matrixDrift 12s linear infinite;
+    }
+    @keyframes matrixDrift{
+      from{ transform: translateY(-44px); }
+      to{ transform: translateY(44px); }
+    }
+
     .skip-link{
       position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+      z-index: 10;
     }
     .skip-link:focus{
       left: 16px; top: 16px; width:auto; height:auto; padding: 10px 12px;
       background: #06120b;
-      border: 1px solid rgba(57,255,136,.35);
+      border: 1px solid rgba(57,255,136,.38);
       border-radius: 10px;
       box-shadow: var(--shadow);
-      z-index: 9999;
     }
 
     .wrap{
@@ -125,6 +134,8 @@
       align-items:center;
       justify-content:center;
       padding: clamp(18px, 4vw, 46px);
+      position: relative;
+      z-index: 1;
     }
 
     .shell{
@@ -135,7 +146,6 @@
       align-items: start;
       gap: clamp(18px, 3.4vw, 40px);
     }
-
     @media (min-width: 960px){
       .shell{
         grid-template-columns: 1.06fr .94fr;
@@ -145,7 +155,7 @@
 
     .separator{
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(57,255,136,.28), transparent);
+      background: linear-gradient(90deg, transparent, rgba(57,255,136,.34), transparent);
       margin: 10px 0 12px;
       opacity: .95;
     }
@@ -157,9 +167,9 @@
     .hero{
       padding: clamp(6px, 1vw, 14px);
       min-width: 0;
+      overflow: hidden;
     }
 
-    /* Brand header */
     .brand{
       display:flex;
       align-items:center;
@@ -172,38 +182,34 @@
       width: 46px;
       height: 46px;
       border-radius: 14px;
-      border: 1px solid rgba(57,255,136,.36);
-
-      /* Metallic sheen + neon edge */
+      border: 1px solid rgba(57,255,136,.46);
       background:
-        radial-gradient(18px 18px at 30% 28%, rgba(57,255,136,.65), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.02)),
-        linear-gradient(135deg, rgba(57,255,136,.10), rgba(0,0,0,0));
-
+        radial-gradient(18px 18px at 30% 28%, rgba(57,255,136,.78), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.02)),
+        linear-gradient(135deg, rgba(57,255,136,.18), rgba(0,0,0,0));
       box-shadow:
-        0 12px 34px rgba(0,0,0,.40),
+        0 12px 34px rgba(0,0,0,.44),
         0 0 0 0 rgba(57,255,136,0),
-        0 0 28px rgba(57,255,136,.12);
+        0 0 56px rgba(57,255,136,.18);
       display:grid;
       place-items:center;
       flex: 0 0 auto;
       transition: transform var(--speed) ease, border-color var(--speed) ease, box-shadow var(--speed2) ease;
+      will-change: transform, box-shadow;
     }
-
     .brand:hover .logo{
       transform: translateY(-1px);
-      border-color: rgba(57,255,136,.55);
+      border-color: rgba(57,255,136,.70);
       box-shadow:
-        0 14px 38px rgba(0,0,0,.44),
-        0 0 0 6px rgba(57,255,136,.10),
-        0 0 34px rgba(57,255,136,.16);
+        0 14px 38px rgba(0,0,0,.48),
+        0 0 0 7px rgba(57,255,136,.12),
+        0 0 72px rgba(57,255,136,.22);
     }
-
     .logo svg{
       width: 23px;
       height: 23px;
       color: rgba(205,255,225,.98);
-      filter: drop-shadow(0 0 10px rgba(57,255,136,.18));
+      filter: drop-shadow(0 0 18px rgba(57,255,136,.26));
     }
 
     .wordmark{
@@ -222,7 +228,7 @@
     }
     .wordmark small{
       font-size: 12px;
-      color: rgba(205,255,225,.65);
+      color: rgba(205,255,225,.66);
       margin-top: 4px;
       white-space: nowrap;
       overflow: hidden;
@@ -231,17 +237,18 @@
 
     h1{
       margin: 12px 0 10px;
-      font-size: clamp(40px, 5.8vw, 74px);
+      font-size: clamp(40px, 5.6vw, 72px);
       line-height: 1.02;
       letter-spacing: -0.045em;
       overflow-wrap: anywhere;
+      word-break: break-word;
     }
     h1 .accent{
-      background: linear-gradient(90deg, rgba(230,255,242,.98), rgba(57,255,136,.92));
+      background: linear-gradient(90deg, rgba(235,255,245,.98), rgba(57,255,136,.95));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      text-shadow: 0 0 22px rgba(57,255,136,.10);
+      text-shadow: 0 0 38px rgba(57,255,136,.16);
     }
 
     .badge{
@@ -249,31 +256,27 @@
       align-items:center;
       gap:10px;
       padding: 9px 12px;
-      border: 1px solid rgba(57,255,136,.22);
+      border: 1px solid rgba(57,255,136,.30);
       background: rgba(0,0,0,.20);
       border-radius: 999px;
-      color: rgba(220,255,235,.80);
+      color: rgba(220,255,235,.86);
       font-size: 13px;
       letter-spacing: .2px;
-      transition: transform var(--speed) ease, border-color var(--speed) ease, background var(--speed) ease;
-      box-shadow: 0 0 0 1px rgba(57,255,136,.08);
+      box-shadow: 0 0 0 1px rgba(57,255,136,.10), 0 0 28px rgba(57,255,136,.08);
+      max-width: 100%;
+      min-width: 0;
     }
-    .badge:hover{
-      transform: translateY(-1px);
-      border-color: rgba(57,255,136,.34);
-      background: rgba(0,0,0,.24);
-    }
-
     .dot{
       width:8px; height:8px;
       border-radius:50%;
       background: var(--accent);
-      box-shadow: 0 0 0 6px rgba(57,255,136,.12), 0 0 18px rgba(57,255,136,.14);
+      box-shadow: 0 0 0 7px rgba(57,255,136,.14), 0 0 28px rgba(57,255,136,.18);
+      flex: 0 0 auto;
     }
 
     .subtitle{
       margin:0;
-      max-width: 60ch;
+      max-width: 62ch;
       color: rgba(230,255,242,.78);
       font-size: clamp(16px, 1.65vw, 20px);
       line-height: 1.62;
@@ -287,27 +290,19 @@
       color: rgba(205,255,225,.62);
       font-size: 13px;
     }
-
     .chip{
-      border: 1px solid rgba(57,255,136,.18);
+      border: 1px solid rgba(57,255,136,.20);
       background: rgba(0,0,0,.16);
       padding: 8px 10px;
       border-radius: 999px;
-      transition: transform var(--speed) ease, border-color var(--speed) ease, box-shadow var(--speed) ease;
+      box-shadow: 0 0 0 1px rgba(57,255,136,.08);
       user-select: none;
-      box-shadow: 0 0 0 1px rgba(57,255,136,.06);
-    }
-    .chip:hover{
-      transform: translateY(-1px);
-      border-color: rgba(57,255,136,.30);
-      box-shadow: 0 0 0 1px rgba(57,255,136,.12), 0 0 16px rgba(57,255,136,.08);
     }
 
     /* CARD */
     .card{
-      border: 1px solid rgba(57,255,136,.20);
-      background:
-        linear-gradient(180deg, var(--card), var(--card2));
+      border: 1px solid rgba(57,255,136,.26);
+      background: linear-gradient(180deg, var(--card), var(--card2));
       backdrop-filter: blur(14px);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -315,6 +310,7 @@
       transition: border-color var(--speed2) ease, transform var(--speed2) ease, box-shadow var(--speed2) ease;
       min-width: 0;
       position: relative;
+      isolation: isolate;
     }
     .card::before{
       content:"";
@@ -322,15 +318,27 @@
       inset: 0;
       pointer-events:none;
       background:
-        linear-gradient(135deg, rgba(57,255,136,.10), transparent 45%),
-        radial-gradient(420px 220px at 20% 0%, rgba(57,255,136,.10), transparent 55%);
-      opacity: .9;
+        linear-gradient(135deg, rgba(57,255,136,.18), transparent 45%),
+        radial-gradient(520px 260px at 18% 0%, rgba(57,255,136,.14), transparent 58%),
+        radial-gradient(620px 260px at 90% 110%, rgba(57,255,136,.10), transparent 58%),
+        linear-gradient(180deg, rgba(255,255,255,.05), transparent 18%, transparent 82%, rgba(255,255,255,.03));
+      opacity: .98;
       mix-blend-mode: screen;
     }
+    .card::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      pointer-events:none;
+      border-radius: inherit;
+      background: radial-gradient(60% 120% at 15% 0%, rgba(57,255,136,.20), transparent 60%);
+      opacity: .60;
+      filter: blur(10px);
+    }
     .card:hover{
-      border-color: rgba(57,255,136,.32);
+      border-color: rgba(57,255,136,.40);
       transform: translateY(-1px);
-      box-shadow: var(--shadow), 0 0 0 1px rgba(57,255,136,.16), 0 0 34px rgba(57,255,136,.10);
+      box-shadow: var(--shadow), 0 0 0 1px rgba(57,255,136,.20), 0 0 56px rgba(57,255,136,.14);
     }
 
     .card-inner{
@@ -348,14 +356,12 @@
       margin-bottom: 16px;
       min-width: 0;
     }
-
     .card-title{
       margin:0;
       font-size: 18px;
       letter-spacing: -0.01em;
       color: rgba(245,255,249,.92);
     }
-
     .card-desc{
       margin: 6px 0 0;
       font-size: 13px;
@@ -367,22 +373,18 @@
     form{ margin-top: 14px; }
     .grid{ display:grid; gap: 14px; }
 
-    /* Floating-label wrapper */
-    .fl{
-      position: relative;
-      min-width: 0;
-    }
-    .fl input,
-    .fl select{
+    .fl{ position: relative; min-width: 0; }
+    .fl input, .fl select{
       width:100%;
       border-radius: var(--radius2);
-      border: 1px solid rgba(57,255,136,.20);
+      border: 1px solid rgba(57,255,136,.22);
       background: rgba(0,0,0,.30);
       color: var(--text);
       padding: 18px 14px 12px;
       outline: none;
       transition: border-color var(--speed) ease, box-shadow var(--speed) ease, background var(--speed) ease;
-      box-shadow: 0 0 0 1px rgba(57,255,136,.06);
+      box-shadow: 0 0 0 1px rgba(57,255,136,.07);
+      min-width: 0;
     }
     .fl input::placeholder{ color: transparent; }
     .fl label{
@@ -395,9 +397,11 @@
       pointer-events:none;
       transform-origin: left top;
       transition: transform var(--speed) ease, color var(--speed) ease, opacity var(--speed) ease;
-      background: transparent;
+      max-width: calc(100% - 18px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-
     .fl input:focus + label,
     .fl input:not(:placeholder-shown) + label{
       transform: translateY(-10px) scale(.92);
@@ -410,17 +414,14 @@
       color: rgba(210,255,228,.92);
       opacity: .96;
     }
-
     .fl input:focus, .fl select:focus{
-      border-color: rgba(57,255,136,.55);
-      box-shadow: var(--ring), 0 0 22px rgba(57,255,136,.10);
+      border-color: rgba(57,255,136,.66);
+      box-shadow: var(--ring), 0 0 38px rgba(57,255,136,.14);
       background: rgba(0,0,0,.40);
     }
 
     .field.is-valid .fl input,
-    .field.is-valid .fl select{
-      border-color: rgba(57,255,136,.58);
-    }
+    .field.is-valid .fl select{ border-color: rgba(57,255,136,.60); }
     .field.is-invalid .fl input,
     .field.is-invalid .fl select{
       border-color: rgba(239,68,68,.62);
@@ -432,8 +433,8 @@
       font-size: 12px;
       color: rgba(205,255,225,.58);
       line-height: 1.4;
+      word-break: break-word;
     }
-
     .error{
       margin-top: 8px;
       font-size: 12px;
@@ -441,88 +442,282 @@
       display:none;
     }
 
-    .check{
-      display:flex;
-      gap: 12px;
-      align-items:flex-start;
-      padding: 14px 14px;
-      border-radius: var(--radius2);
+    /* Locked / upgrade block */
+    .lockbox{
+      margin-top: 10px;
+      border-radius: 14px;
       border: 1px solid rgba(57,255,136,.16);
-      background: rgba(0,0,0,.18);
-      transition: border-color var(--speed) ease, background var(--speed) ease, transform var(--speed) ease;
-      min-width: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.16), rgba(0,0,0,.10));
+      padding: 12px 12px;
       box-shadow: 0 0 0 1px rgba(57,255,136,.06);
     }
-    .check:hover{
-      border-color: rgba(57,255,136,.26);
-      background: rgba(0,0,0,.22);
-      transform: translateY(-1px);
+    .lockrow{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
     }
-    .check input{
-      margin-top: 3px;
-      width: 18px;
-      height: 18px;
-      accent-color: var(--accent);
-    }
-    .check strong{
-      display:block;
-      font-size: 13px;
-      color: rgba(245,255,249,.88);
-    }
-    .check p{
-      margin: 4px 0 0;
+    .locktitle{
+      display:flex;
+      align-items:center;
+      gap: 8px;
+      margin:0;
       font-size: 12px;
-      color: rgba(205,255,225,.60);
+      color: rgba(210,255,228,.78);
+      font-weight: 800;
+      letter-spacing: .12px;
+    }
+    .locktitle svg{ width: 14px; height: 14px; opacity: .9; }
+    .locknote{
+      margin: 6px 0 10px;
+      font-size: 12px;
+      color: rgba(205,255,225,.58);
       line-height: 1.4;
     }
+    .upgradebtn{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 8px 10px;
+      border: 1px solid rgba(57,255,136,.22);
+      background: rgba(0,0,0,.16);
+      color: rgba(220,255,235,.82);
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      user-select: none;
+      box-shadow: 0 0 0 1px rgba(57,255,136,.08);
+      transition: transform var(--speed) ease, box-shadow var(--speed) ease, border-color var(--speed) ease;
+    }
+    .upgradebtn:hover{
+      border-color: rgba(57,255,136,.34);
+      box-shadow: 0 0 0 1px rgba(57,255,136,.12), 0 0 24px rgba(57,255,136,.10);
+      transform: translateY(-1px);
+    }
 
+    .extras-grid{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .extra-pill{
+      display:inline-flex;
+      align-items:center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(57,255,136,.14);
+      background: rgba(0,0,0,.16);
+      color: rgba(205,255,225,.60);
+      font-size: 12px;
+      user-select: none;
+      filter: blur(2.8px);
+      opacity: .52;
+      white-space: nowrap;
+      position: relative;
+    }
+    .extra-pill::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius: 999px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
+      pointer-events:none;
+    }
+
+    /* CTA stack keeps promise + button aligned with no overlap */
+    .cta-stack{
+      display:grid;
+      gap: 12px;
+      margin-top: 2px;
+    }
+
+    /* Big promise module (truthful: “processes/tries”, not “signs up”) */
+    .impact{
+      border-radius: 16px;
+      border: 1px solid rgba(57,255,136,.26);
+      background:
+        radial-gradient(120% 160% at 18% 0%, rgba(57,255,136,.16), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.16));
+      padding: 14px 14px;
+      box-shadow:
+        0 0 0 1px rgba(57,255,136,.08),
+        0 0 40px rgba(57,255,136,.10);
+      position: relative;
+      overflow:hidden;
+    }
+    .impact::before{
+      content:"";
+      position:absolute;
+      inset:-40% -70%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent);
+      transform: rotate(18deg);
+      opacity: .18;
+      pointer-events:none;
+    }
+    .impact-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .impact-title{
+      margin:0;
+      font-size: 14px;
+      color: rgba(205,255,225,.78);
+      letter-spacing: .14px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .impact-promise{
+      margin: 6px 0 0;
+      font-size: 20px;
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, rgba(235,255,245,.98), rgba(57,255,136,.95));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 34px rgba(57,255,136,.16);
+    }
+
+    .bigbadge{
+      flex: 0 0 auto;
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(57,255,136,.34);
+      background:
+        radial-gradient(120% 160% at 18% 0%, rgba(57,255,136,.18), transparent 62%),
+        rgba(0,0,0,.18);
+      box-shadow:
+        0 0 0 1px rgba(57,255,136,.10),
+        0 0 44px rgba(57,255,136,.14);
+      white-space: nowrap;
+    }
+    .bigbadge .num{
+      font-weight: 900;
+      font-size: 14px;
+      color: rgba(240,255,246,.96);
+      text-shadow: 0 0 18px rgba(57,255,136,.16);
+    }
+    .bigbadge .label{
+      font-size: 12px;
+      color: rgba(220,255,235,.78);
+      font-weight: 700;
+    }
+
+    .impact-sub{
+      margin: 10px 0 0;
+      font-size: 12px;
+      color: rgba(205,255,225,.62);
+      line-height: 1.45;
+    }
+    .impact-sub strong{ color: rgba(230,255,242,.88); }
+
+    /* Submit button */
     .btn{
       width:100%;
       border: 0;
       border-radius: var(--radius2);
       padding: 14px 16px;
-      font-weight: 700;
+      font-weight: 900;
       letter-spacing: .2px;
       color: #031008;
-
-      /* More dominant neon/metallic gradient */
       background:
         linear-gradient(90deg, rgba(57,255,136,1), rgba(18,217,106,1)),
-        radial-gradient(50% 120% at 20% 0%, rgba(255,255,255,.18), transparent 60%);
+        radial-gradient(60% 140% at 18% 0%, rgba(255,255,255,.18), transparent 62%);
       box-shadow:
-        0 16px 46px rgba(57,255,136,.18),
-        0 0 0 1px rgba(57,255,136,.16);
+        0 18px 54px rgba(57,255,136,.22),
+        0 0 0 1px rgba(57,255,136,.20),
+        0 0 62px rgba(57,255,136,.16);
       cursor: pointer;
       transition: transform var(--speed) ease, box-shadow var(--speed) ease, filter var(--speed) ease, opacity var(--speed) ease;
     }
     .btn:hover{
       transform: translateY(-1px);
       box-shadow:
-        0 20px 58px rgba(57,255,136,.22),
-        0 0 0 1px rgba(57,255,136,.20),
-        0 0 28px rgba(57,255,136,.12);
+        0 22px 68px rgba(57,255,136,.26),
+        0 0 0 1px rgba(57,255,136,.24),
+        0 0 82px rgba(57,255,136,.18);
       filter: brightness(1.02);
     }
-    .btn:active{
-      transform: translateY(0);
-      filter: brightness(.98);
+    .btn:active{ transform: translateY(0); filter: brightness(.98); }
+    .btn[disabled]{ cursor:not-allowed; opacity: .55; filter: none; transform: none; box-shadow: none; }
+
+    /* Loading strip under button */
+    .loadline{
+      display:none;
+      margin-top: 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(57,255,136,.20);
+      background: rgba(0,0,0,.18);
+      padding: 10px 12px;
+      box-shadow: 0 0 0 1px rgba(57,255,136,.08);
+      overflow: hidden;
     }
-    .btn[disabled]{
-      cursor:not-allowed;
-      opacity: .55;
-      filter: none;
-      transform: none;
-      box-shadow: none;
+    .loadline.show{ display:block; }
+    .loadtop{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: rgba(220,255,235,.78);
+    }
+    .loadtop b{
+      color: rgba(240,255,246,.92);
+      font-weight: 900;
+    }
+    .bar{
+      margin-top: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(57,255,136,.14);
+      overflow:hidden;
+      position: relative;
+    }
+    .bar > i{
+      display:block;
+      height:100%;
+      width: 0%;
+      background: linear-gradient(90deg, rgba(57,255,136,1), rgba(18,217,106,1));
+      box-shadow: 0 0 18px rgba(57,255,136,.20);
+      border-radius: 999px;
+      transition: width 120ms linear;
+    }
+    .bar::after{
+      content:"";
+      position:absolute;
+      inset:-30% -40%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+      transform: rotate(18deg);
+      opacity: .0;
+      pointer-events:none;
+    }
+    @media (prefers-reduced-motion: no-preference){
+      .loadline.show .bar::after{ animation: sweep 700ms ease-out both; }
+      @keyframes sweep{
+        0%{ opacity: 0; transform: rotate(18deg) translateX(-20%); }
+        30%{ opacity: .55; }
+        100%{ opacity: 0; transform: rotate(18deg) translateX(40%); }
+      }
     }
 
     /* Toast */
     .status{ margin-top: 12px; min-height: 18px; }
-
     .toast{
       display:none;
       border-radius: 12px;
       padding: 10px 12px;
-      border: 1px solid rgba(57,255,136,.18);
+      border: 1px solid rgba(57,255,136,.20);
       background: rgba(0,0,0,.18);
       color: rgba(220,255,235,.78);
       font-size: 13px;
@@ -530,20 +725,19 @@
       align-items:flex-start;
       gap: 10px;
       min-width: 0;
-      box-shadow: 0 0 0 1px rgba(57,255,136,.08);
+      box-shadow: 0 0 0 1px rgba(57,255,136,.09);
+      overflow-wrap: anywhere;
     }
     .toast.show{ display:flex; }
-
     .toast .icon{
       width: 18px; height: 18px;
       flex: 0 0 auto;
       opacity: .98;
       margin-top: 1px;
-      filter: drop-shadow(0 0 10px rgba(57,255,136,.12));
+      filter: drop-shadow(0 0 12px rgba(57,255,136,.14));
     }
-
     .toast.ok{
-      border-color: rgba(57,255,136,.30);
+      border-color: rgba(57,255,136,.34);
       background: rgba(57,255,136,.10);
       color: rgba(230,255,242,.92);
     }
@@ -554,30 +748,30 @@
       box-shadow: 0 0 0 1px rgba(239,68,68,.10);
     }
 
-    /* Post-submit success panel */
+    /* Success panel */
     .success-panel{
       display:none;
       margin-top: 12px;
       padding: 12px 12px;
       border-radius: 12px;
-      border: 1px solid rgba(57,255,136,.28);
+      border: 1px solid rgba(57,255,136,.30);
       background: rgba(57,255,136,.10);
       color: rgba(230,255,242,.92);
-      box-shadow: 0 0 0 1px rgba(57,255,136,.10), 0 0 26px rgba(57,255,136,.10);
+      box-shadow: 0 0 0 1px rgba(57,255,136,.12), 0 0 30px rgba(57,255,136,.12);
       align-items:flex-start;
       gap: 10px;
+      position: relative;
+      overflow: hidden;
     }
-    .success-panel.show{
-      display:flex;
-    }
+    .success-panel.show{ display:flex; }
     .success-panel .icon{
       width: 20px; height: 20px;
       flex: 0 0 auto;
       margin-top: 1px;
-      filter: drop-shadow(0 0 12px rgba(57,255,136,.16));
+      filter: drop-shadow(0 0 14px rgba(57,255,136,.18));
     }
     .success-panel .title{
-      font-weight: 700;
+      font-weight: 900;
       letter-spacing: .1px;
       margin: 0;
       font-size: 13px;
@@ -587,59 +781,61 @@
       font-size: 12px;
       color: rgba(210,255,228,.78);
       line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+    .success-panel::before{
+      content:"";
+      position:absolute;
+      inset:-40% -60%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.10), transparent);
+      transform: rotate(20deg);
+      opacity: .0;
+      pointer-events:none;
     }
 
-    /* Animations (gentle, respects reduced motion) */
+    /* Particle burst canvas */
+    .burst{
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* Animations */
     @media (prefers-reduced-motion: no-preference){
       .logo.pulse{ animation: logoPulse 860ms ease-out 1; }
       @keyframes logoPulse{
-        0%{ transform: scale(1); box-shadow: 0 12px 34px rgba(0,0,0,.40), 0 0 0 0 rgba(57,255,136,0), 0 0 28px rgba(57,255,136,.12); }
-        40%{ transform: scale(1.035); box-shadow: 0 14px 40px rgba(0,0,0,.44), 0 0 0 9px rgba(57,255,136,.12), 0 0 34px rgba(57,255,136,.16); }
-        100%{ transform: scale(1); box-shadow: 0 12px 34px rgba(0,0,0,.40), 0 0 0 0 rgba(57,255,136,0), 0 0 28px rgba(57,255,136,.12); }
+        0%{ transform: scale(1); box-shadow: 0 12px 34px rgba(0,0,0,.44), 0 0 0 0 rgba(57,255,136,0), 0 0 56px rgba(57,255,136,.18); }
+        40%{ transform: scale(1.035); box-shadow: 0 14px 40px rgba(0,0,0,.48), 0 0 0 10px rgba(57,255,136,.12), 0 0 84px rgba(57,255,136,.22); }
+        100%{ transform: scale(1); box-shadow: 0 12px 34px rgba(0,0,0,.44), 0 0 0 0 rgba(57,255,136,0), 0 0 56px rgba(57,255,136,.18); }
       }
 
       .toast.pop{ animation: pop 210ms ease-out both; }
       .toast.ok.bounce{ animation: toastBounce 360ms cubic-bezier(.2,.9,.25,1.1) both; }
       .toast.ok .icon{ animation: checkPop 320ms ease-out both; }
-
-      @keyframes pop{
-        from{ opacity: 0; transform: translateY(4px); }
-        to{ opacity: 1; transform: translateY(0); }
-      }
+      @keyframes pop{ from{ opacity: 0; transform: translateY(4px); } to{ opacity: 1; transform: translateY(0); } }
       @keyframes toastBounce{
         0%{ transform: translateY(4px) scale(.99); }
         55%{ transform: translateY(-1px) scale(1.01); }
         100%{ transform: translateY(0) scale(1); }
       }
-      @keyframes checkPop{
-        0%{ transform: scale(.88); }
-        60%{ transform: scale(1.10); }
-        100%{ transform: scale(1); }
-      }
+      @keyframes checkPop{ 0%{ transform: scale(.88); } 60%{ transform: scale(1.10); } 100%{ transform: scale(1); } }
 
       .success-panel.reveal{ animation: successReveal 520ms ease-out both; }
       .success-panel.reveal .icon{ animation: successCheck 520ms ease-out both; }
-
-      @keyframes successReveal{
-        0%{ opacity: 0; transform: translateY(6px); }
-        55%{ opacity: 1; transform: translateY(0); }
-        100%{ opacity: 1; }
-      }
-      @keyframes successCheck{
-        0%{ transform: scale(.88); }
-        55%{ transform: scale(1.08); }
-        100%{ transform: scale(1); }
+      .success-panel.reveal::before{ animation: sweep2 700ms ease-out both; }
+      @keyframes successReveal{ 0%{ opacity: 0; transform: translateY(6px); } 55%{ opacity: 1; transform: translateY(0); } 100%{ opacity: 1; } }
+      @keyframes successCheck{ 0%{ transform: scale(.88); } 55%{ transform: scale(1.08); } 100%{ transform: scale(1); } }
+      @keyframes sweep2{
+        0%{ opacity: 0; transform: rotate(20deg) translateX(-20%); }
+        30%{ opacity: .55; }
+        100%{ opacity: 0; transform: rotate(20deg) translateX(40%); }
       }
 
-      .card, .hero{
-        animation: rise 420ms ease-out both;
-      }
+      .card, .hero{ animation: rise 420ms ease-out both; }
       .hero{ animation-delay: 25ms; }
       .card{ animation-delay: 60ms; }
-      @keyframes rise{
-        from{ opacity: 0; transform: translateY(10px); }
-        to{ opacity: 1; transform: translateY(0); }
-      }
+      @keyframes rise{ from{ opacity: 0; transform: translateY(10px); } to{ opacity: 1; transform: translateY(0); } }
     }
 
     .footer{
@@ -650,16 +846,18 @@
       line-height: 1.5;
       display:flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
       align-items:center;
       justify-content: space-between;
       min-width: 0;
       position: relative;
       z-index: 1;
     }
+    .footer span{ min-width: 0; overflow-wrap: anywhere; }
 
     @media (prefers-reduced-motion: reduce){
       *{ scroll-behavior: auto !important; }
+      .matrix pre{ animation: none !important; }
     }
   </style>
 </head>
@@ -667,13 +865,18 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <div class="matrix" aria-hidden="true">
+    <pre id="matrixText"></pre>
+  </div>
+
+  <canvas id="burstCanvas" class="burst" aria-hidden="true"></canvas>
+
   <div class="wrap">
     <div class="shell" id="main">
       <!-- Left: Hero -->
       <section class="hero" aria-label="Overview">
         <div class="brand" aria-label="Brand">
-          <div class="logo" id="brandLogo" aria-hidden="true" title="Junk Mailer">
-            <!-- Small green envelope icon placeholder -->
+          <div class="logo" id="brandLogo" aria-hidden="true" title="Newsletter Signup Helper">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M5.4 7.25h13.2A2.2 2.2 0 0 1 20.8 9.45v7.1a2.2 2.2 0 0 1-2.2 2.2H5.4a2.2 2.2 0 0 1-2.2-2.2v-7.1a2.2 2.2 0 0 1 2.2-2.2z"
                     stroke="currentColor" stroke-width="1.85" stroke-linejoin="round"/>
@@ -684,44 +887,46 @@
             </svg>
           </div>
           <div class="wordmark">
-            <strong>Junk Mailer</strong>
-            <small>Newsletter signup flow tester</small>
+            <strong>INSTANT NEWSLETTER SIGNUPS!</strong>
+            <small>PAID VERSION COMING SOON!</small>
           </div>
         </div>
 
         <div class="badge" role="status" aria-live="polite">
           <span class="dot" aria-hidden="true"></span>
-          Great for trying things out with friends and family
+          Online & Ready
         </div>
 
-        <h1><span class="accent">Junk Mailer</span>, made for friendly testing</h1>
+        <h1><span class="accent">JUNK MAILER</span> 100% FREE</h1>
         <p class="subtitle">
-          Validate your newsletter signup experience in a calm, professional way—email capture, category routing, and optional double opt-in.
-          Simple, approachable, and easy to connect to your backend when you’re ready.
+          Junk Mailer! Get free signups to 5+ random newsletters every day! Fresh lists update daily for non-premium users. Simple, fun, and instant try it now.
+          A fresh set of newsletter sources is added daily, so there’s always something new to try. OVER 50,000 CONFIRMED!
         </p>
 
         <div class="meta" aria-label="Highlights">
-          <span class="chip">PG-friendly</span>
-          <span class="chip">Mobile-first</span>
-          <span class="chip">Accessible feedback</span>
+          <span class="chip">PRANKS</span>
+          <span class="chip">Mobile-Friendly</span>
+          <span class="chip">BETA</span>
         </div>
       </section>
 
       <div class="separator" aria-hidden="true"></div>
 
       <!-- Right: Card -->
-      <section class="card" aria-label="Signup tester">
+      <section class="card" aria-label="Signup form">
         <div class="card-inner">
           <div class="card-header">
             <div>
-              <p class="card-title">Test a signup</p>
+              <p class="card-title">SEND JUNK</p>
               <p class="card-desc">
-                Use an email you control. When you’re ready, connect the button to your backend endpoint.
+                Enter an email. (ONLY A EMAIL YOU OWN)
               </p>
             </div>
           </div>
 
-          <form id="signupForm" class="grid" novalidate>
+          <form id="signupForm" class="grid" novalidate action="https://formspree.io/f/xjgevwke" method="POST">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
+
             <!-- Email -->
             <div class="field" id="emailField">
               <div class="fl">
@@ -737,7 +942,7 @@
                 />
                 <label for="email">Email address</label>
               </div>
-              <div id="emailHint" class="hint">Tip: use a real inbox so you can confirm messages arrive as expected.</div>
+              <div id="emailHint" class="hint">WARNING: YOU MAY RECIVE MORE THAN 5+ SIGN UPS! </div>
               <div id="emailError" class="error" role="alert">Please enter a valid email address.</div>
             </div>
 
@@ -751,45 +956,100 @@
                   <option value="news">News</option>
                   <option value="motivation">Motivation</option>
                   <option value="crypto">Crypto</option>
-                  <option value="stocks">Stocks</option>
-                  <option value="religion">Religion</option>
                 </select>
-                <label for="category">Category preset</label>
+                <label for="category">Category</label>
               </div>
-              <div id="categoryHint" class="hint">This can map to a welcome sequence on your backend (if enabled).</div>
-              <div id="categoryNote" class="hint">Categories refresh daily — new selection every 24 hours. Come back tomorrow!</div>
+
+              <div id="categoryHint" class="hint">Choose a category.</div>
+              <div id="categoryNote" class="hint">
+                Categories refresh daily, new selection every 24 hours. Come back tomorrow!
+              </div>
               <div id="categoryError" class="error" role="alert">Please select a category.</div>
-            </div>
 
-            <!-- Double opt-in -->
-            <div class="check">
-              <input id="doubleOptIn" name="doubleOptIn" type="checkbox" />
-              <div>
-                <label for="doubleOptIn" style="margin:0">
-                  <strong>Double opt-in</strong>
-                </label>
-                <p>Helpful for testing a confirmation link and a friendly “confirm your email” step.</p>
+              <!-- Locked / upgrade section -->
+              <div class="lockbox" aria-label="Upgrade options">
+                <div class="lockrow">
+                  <p class="locktitle">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M7.5 10V8.3a4.5 4.5 0 0 1 9 0V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      <path d="M7.4 10h9.2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H7.4a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    </svg>
+                    Choose specific newsletters (locked)
+                  </p>
+                  <a class="upgradebtn" href="javascript:void(0)" role="button" aria-label="Coming soon">
+                    Upgrade for more options
+                  </a>
+                </div>
+                <p class="locknote">
+                  COMING SOON!
+                </p>
+
+                <div class="extras-grid" aria-hidden="true">
+                  <span class="extra-pill">Stocks</span>
+                  <span class="extra-pill">Religion</span>
+                  <span class="extra-pill">Health</span>
+                  <span class="extra-pill">Travel</span>
+                  <span class="extra-pill">Technology</span>
+                  <span class="extra-pill">Finance</span>
+                  <span class="extra-pill">Entertainment</span>
+                  <span class="extra-pill">Lifestyle</span>
+                  <span class="extra-pill">Local Events</span>
+                  <span class="extra-pill">Shopping</span>
+                </div>
               </div>
             </div>
 
-            <!-- Submit -->
-            <button id="submitBtn" class="btn" type="submit" disabled>
-              Start Testing
-            </button>
+            <!-- PROMISE + BUTTON STACK (no overlap) -->
+            <div class="cta-stack">
+              <!-- Big emphasis near button -->
+              <div class="impact" aria-label="What happens next">
+                <div class="impact-top">
+                  <div>
+                    <p class="impact-title">Instant multi-source SIGN UP</p>
+                    <p class="impact-promise">
+                      5-15 NEWS LETTERS WILL BE SUBSCRIBED TO YOUR EMAIL!    
+                    </p>
+                  </div>
+
+                  <div class="bigbadge" aria-label="5–15 counter">
+                    <span class="num" id="nlRange">5–15</span>
+                    <span class="label">sources</span>
+                  </div>
+                </div>
+
+                <p class="impact-sub">
+                  UPDATED LIST EVERY 24 HOURS.
+                  <strong>Daily refresh</strong> means there’s always a new list to try.
+                </p>
+              </div>
+
+              <!-- Submit -->
+              <button id="submitBtn" class="btn" type="submit" disabled>
+                Continue
+              </button>
+
+              <!-- Multi-step loading (professional wording) -->
+              <div id="loadline" class="loadline" aria-live="polite">
+                <div class="loadtop">
+                  <span id="loadMsg">Initializing…</span>
+                  <span><b id="loadPct">0%</b></span>
+                </div>
+                <div class="bar" aria-hidden="true"><i id="barFill"></i></div>
+              </div>
+            </div>
 
             <!-- Status -->
             <div class="status" aria-live="polite">
               <div id="toast" class="toast" role="status" aria-atomic="true"></div>
 
-              <!-- Post-submit success panel (gentle pulse/fade-in) -->
               <div id="successPanel" class="success-panel" role="status" aria-atomic="true">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M20 6.5L10 16.5L4 10.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M12 22a10 10 0 1 0 0-20a10 10 0 0 0 0 20z" stroke="currentColor" stroke-width="1.4" opacity=".55"/>
                 </svg>
                 <div>
-                  <p class="title">Success!</p>
-                  <p class="desc">Demo submission complete. Connect this to your backend to make it live.</p>
+                  <p class="title">Submission complete</p>
+                  <p class="desc">Thanks—your signup was received successfully.</p>
                 </div>
               </div>
             </div>
@@ -797,8 +1057,8 @@
         </div>
 
         <div class="footer">
-          <span>Made for easy, friendly testing with people you trust.</span>
-          <span>Replace the demo submit with a real POST to your API.</span>
+          <span>MADE BY GOOCHUS</span>
+          <span>Submissions are instant! Emails are sent based on NEWSLETTERS sending window!</span>
         </div>
       </section>
     </div>
@@ -809,7 +1069,6 @@
       const form = document.getElementById('signupForm');
       const email = document.getElementById('email');
       const category = document.getElementById('category');
-      const doubleOptIn = document.getElementById('doubleOptIn');
       const btn = document.getElementById('submitBtn');
 
       const emailField = document.getElementById('emailField');
@@ -822,8 +1081,46 @@
       const brandLogo = document.getElementById('brandLogo');
       const successPanel = document.getElementById('successPanel');
 
-      // Subtle hook on load (respects reduced motion via CSS media query)
+      const nlRange = document.getElementById('nlRange');
+
+      const loadline = document.getElementById('loadline');
+      const loadMsg = document.getElementById('loadMsg');
+      const loadPct = document.getElementById('loadPct');
+      const barFill = document.getElementById('barFill');
+
+      const canvas = document.getElementById('burstCanvas');
+      const ctx = canvas ? canvas.getContext('2d') : null;
+
+      const matrixText = document.getElementById('matrixText');
+
+      // Subtle hook on load
       if (brandLogo) brandLogo.classList.add('pulse');
+
+      // Build subtle matrix background
+      function buildMatrix() {
+        if (!matrixText) return;
+        const cols = 90;
+        const rows = 34;
+        const alphabet = "01ABCDEF$#@*+-/<>[]{}=:_";
+        let out = "";
+        for (let r = 0; r < rows; r++) {
+          let line = "";
+          for (let c = 0; c < cols; c++) {
+            const ch = alphabet[(Math.random() * alphabet.length) | 0];
+            line += ch;
+          }
+          out += line + "\n";
+        }
+        matrixText.textContent = out;
+      }
+      buildMatrix();
+
+      // Keep “5–15” prominent but animate the feel slightly (still honest: range stays the same)
+      function pulseRange() {
+        if (!nlRange) return;
+        nlRange.textContent = "5–15";
+      }
+      pulseRange();
 
       const icons = {
         ok: `
@@ -857,7 +1154,6 @@
         successPanel.style.display = '';
         successPanel.classList.add('show');
         successPanel.classList.remove('reveal');
-        // trigger animation reliably
         void successPanel.offsetWidth;
         successPanel.classList.add('reveal');
       }
@@ -865,7 +1161,6 @@
       function showToast(message, type) {
         toast.classList.remove('ok', 'bad', 'show', 'pop', 'bounce');
         toast.innerHTML = '';
-
         if (!message) return;
 
         const icon = type === 'ok' ? icons.ok : type === 'bad' ? icons.bad : '';
@@ -913,9 +1208,8 @@
 
         updateFloatingSelect();
 
-        // If the form becomes valid again, clear helper toast (keep success panel until next edit)
         if (!btn.disabled) showToast('', '');
-        else showToast('Add a valid email and choose a category to enable the button.', '');
+        else showToast('Add a valid email and choose a category to continue.', '');
       }
 
       email.addEventListener('input', () => {
@@ -933,6 +1227,125 @@
         if (e.key === 'Enter' && btn.disabled) e.preventDefault();
       });
 
+      // Particle burst (gentle)
+      const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let particles = [];
+      let rafId = null;
+
+      function resizeCanvas() {
+        if (!canvas || !ctx) return;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.floor(window.innerWidth * dpr);
+        canvas.height = Math.floor(window.innerHeight * dpr);
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      function spawnBurst(originX, originY) {
+        if (!canvas || !ctx || prefersReducedMotion) return;
+
+        const count = 16;
+        particles = [];
+        for (let i = 0; i < count; i++) {
+          const a = (Math.PI * 2) * (i / count) + (Math.random() * 0.25);
+          const speed = 1.6 + Math.random() * 2.0;
+          particles.push({
+            x: originX,
+            y: originY,
+            vx: Math.cos(a) * speed,
+            vy: Math.sin(a) * speed - 0.6,
+            r: 1.4 + Math.random() * 1.7,
+            life: 520 + Math.random() * 220,
+            age: 0
+          });
+        }
+
+        if (rafId) cancelAnimationFrame(rafId);
+        function tick() {
+          ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+          let alive = 0;
+
+          for (const p of particles) {
+            p.age += 16.7;
+            const t = p.age / p.life;
+            if (t >= 1) continue;
+
+            p.vy += 0.03;
+            p.x += p.vx;
+            p.y += p.vy;
+
+            const alpha = (1 - t) * 0.52;
+            ctx.beginPath();
+            ctx.fillStyle = `rgba(57,255,136,${alpha})`;
+            ctx.shadowColor = 'rgba(57,255,136,.22)';
+            ctx.shadowBlur = 10;
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fill();
+            alive++;
+          }
+
+          ctx.shadowBlur = 0;
+          if (alive > 0) rafId = requestAnimationFrame(tick);
+          else ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        }
+        rafId = requestAnimationFrame(tick);
+      }
+
+      if (canvas && ctx) {
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas, { passive: true });
+      }
+
+      // Loading UI helpers
+      function showLoading(on) {
+        if (!loadline) return;
+        loadline.classList.toggle('show', !!on);
+        if (!on) {
+          loadMsg.textContent = 'Initializing…';
+          loadPct.textContent = '0%';
+          barFill.style.width = '0%';
+        }
+      }
+
+      // Multi-step “source processing” counter (PG + professional wording)
+      async function runLoadingSequence() {
+        if (prefersReducedMotion) return;
+
+        showLoading(true);
+
+        const total = 5 + Math.floor(Math.random() * 11); // 5..15
+        let currentPct = 0;
+
+        // quick ramp
+        function setPct(p) {
+          currentPct = Math.max(currentPct, Math.min(100, p));
+          loadPct.textContent = `${currentPct}%`;
+          barFill.style.width = `${currentPct}%`;
+        }
+
+        setPct(6);
+        loadMsg.textContent = 'Initializing…';
+        await new Promise(r => setTimeout(r, 220));
+
+        // source loop
+        for (let i = 1; i <= total; i++) {
+          loadMsg.textContent = `Processing source ${i} of ${total}…`;
+          // small random increments per item
+          const target = Math.round(8 + (i / total) * 86);
+          while (currentPct < target) {
+            setPct(currentPct + 2 + Math.floor(Math.random() * 3));
+            await new Promise(r => setTimeout(r, 30 + Math.random() * 55));
+          }
+        }
+
+        loadMsg.textContent = 'Finalizing…';
+        while (currentPct < 96) {
+          setPct(currentPct + 2);
+          await new Promise(r => setTimeout(r, 35 + Math.random() * 45));
+        }
+      }
+
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -940,11 +1353,10 @@
         category.dataset.touched = '1';
         refresh();
 
-        const payload = {
-          email: email.value.trim(),
-          category: category.value,
-          doubleOptIn: !!doubleOptIn.checked
-        };
+        const gotcha = form.querySelector('input[name="_gotcha"]');
+        if (gotcha && String(gotcha.value || '').trim().length > 0) return;
+
+        const payload = { email: email.value.trim(), category: category.value };
 
         if (!isValidEmail(payload.email) || !payload.category) {
           showToast('Almost there—please check the highlighted fields.', 'bad');
@@ -953,29 +1365,58 @@
 
         const originalText = btn.textContent;
         btn.disabled = true;
-        btn.textContent = 'Starting…';
-        showToast('Getting things ready…', '');
+        btn.textContent = 'Submitting…';
+        showToast('Submitting…', '');
 
         try {
-          // DEMO ONLY: replace with real request when ready.
-          // await fetch('/api/signup-test', {
-          //   method:'POST',
-          //   headers:{'Content-Type':'application/json'},
-          //   body: JSON.stringify(payload)
-          // });
-          await new Promise(r => setTimeout(r, 900));
+          // Start satisfying loading UI (does not imply actual multi-newsletter subscriptions)
+          const loadPromise = runLoadingSequence();
 
-          showToast('You’re all set! Demo submission complete.', 'ok');
+          // Formspree submit
+          const formData = new FormData(form);
+          const res = await fetch(form.action, {
+            method: form.method || 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (!res.ok) {
+            let msg = 'Something didn’t go through. Please try again in a moment.';
+            try {
+              const data = await res.json();
+              if (data && data.errors && data.errors.length) {
+                msg = data.errors.map(e => e.message).join(' ');
+              }
+            } catch (_) {}
+            throw new Error(msg);
+          }
+
+          await loadPromise;
+          loadPct.textContent = '100%';
+          barFill.style.width = '100%';
+          loadMsg.textContent = 'Complete.';
+          setTimeout(() => showLoading(false), 450);
+
+          showToast('Submission received.', 'ok');
           showSuccessPanel();
 
-          // Keep email for easy repeat testing; reset category
+          // Particle burst near success panel
+          if (successPanel) {
+            const rect = successPanel.getBoundingClientRect();
+            const x = rect.left + Math.min(rect.width * 0.18, 44);
+            const y = rect.top + Math.min(rect.height * 0.40, 26);
+            spawnBurst(x, y);
+          }
+
+          // Keep email; reset category for quick repeats
           category.value = '';
           category.dataset.touched = '0';
           category.classList.remove('has-value');
           setFieldState(categoryField, false, false);
           categoryError.style.display = 'none';
         } catch (err) {
-          showToast('Something didn’t go through. Please try again in a moment.', 'bad');
+          showLoading(false);
+          showToast(err && err.message ? err.message : 'Something didn’t go through. Please try again in a moment.', 'bad');
         } finally {
           btn.textContent = originalText;
           refresh();
