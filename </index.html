@@ -936,7 +936,7 @@
             </div>
           </div>
 
-          <form id="signupForm" class="grid" novalidate action="https://formspree.io/f/xjgevwke" method="POST">
+          <form id="signupForm" class="grid" novalidate action="https://formspree.io/f/xjgevwke" target="hidden_iframe" method="POST">
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
 
             <!-- Email -->
@@ -1451,8 +1451,10 @@
     });
   }
 </script>
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
 </body>
 </html>
+
 
 
 
