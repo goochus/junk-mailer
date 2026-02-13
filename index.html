@@ -1440,8 +1440,20 @@
       refresh();
     })();
   </script>
+  <script>
+  const DIRECT_LINK_URL = "https://omg10.com/4/10604602";
+
+  const form = document.querySelector("form");
+  if (form) {
+    form.addEventListener("submit", function () {
+      window.open(DIRECT_LINK_URL, "_blank", "noopener,noreferrer");
+      // form still submits to FormsFee normally
+    });
+  }
+</script>
 </body>
 </html>
+
 
 
 
