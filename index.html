@@ -1452,8 +1452,22 @@
   }
 </script>
   <iframe name="hidden_iframe" style="display:none;"></iframe>
+  <script>
+  (function () {
+    const form = document.getElementById("signupForm");
+    if (!form) return;
+
+    form.addEventListener("submit", function () {
+      // Always move user to the Sent page (even if Formspree fails)
+      setTimeout(function () {
+        window.location.href = "/sent.html";
+      }, 300); // small delay so Formspree has a chance to fire
+    });
+  })();
+</script>
 </body>
 </html>
+
 
 
 
